@@ -1,0 +1,18 @@
+<ng-container
+  *ngTemplateOutlet="activeTemplate; context: { $implicit: user }"
+></ng-container>
+
+<ng-template #basicUserCard let-user>
+  <div class="card">
+    <h3>{{ user.name }}</h3>
+    <p>{{ user.email }}</p>
+  </div>
+</ng-template>
+
+<ng-template #premiumUserCard let-user>
+  <div class="card-premium">
+    <h3>{{ user.name }} (Premium)</h3>
+    <p>{{ user.email }}</p>
+    <p>Membership Expires: {{ user.membershipExpiryDate }}</p>
+  </div>
+</ng-template>
